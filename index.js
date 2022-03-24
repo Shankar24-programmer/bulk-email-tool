@@ -7,6 +7,7 @@ dotenv.config();
 const app=express()
 app.use(cors());
 app.use(express.json())
+const port=process.env.port || 4001;
 var sender = nodemailer.createTransport({
     service: "gmail",   
     auth: {   
@@ -38,7 +39,7 @@ const {to,subject,content}=req.body;
 
 })
 
-app.listen(4000, () => {
+app.listen(port, () => {
 
 console.log(`Example app listening on port `)
 
