@@ -16,6 +16,9 @@ var sender = nodemailer.createTransport({
     },    
     });
     
+    app.get("/", function(req, res){
+        res.send("welcome");
+    })
 
 app.post("/sendprocess",async function(req, res){   
 const {to,subject,content}=req.body;   
